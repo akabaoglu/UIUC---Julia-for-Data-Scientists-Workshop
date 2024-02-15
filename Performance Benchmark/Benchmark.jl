@@ -32,5 +32,5 @@ dat3 = DataFrame(x10 = ["P", "N"], x11 = [723, 327])
 
 ### 6. Merging a Dataset of 10 Million Observations on 2 Keys
 dat2.x11 = rand(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "X", "W", "Y", "Z"], 10^7)
-dat4 = DataFrame(x11 = ["A", "B", "C", "D"5, "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "X", "W", "Y", "Z"], x10 = rand(["P", "N"], 25), x12 = rand(25))
+dat4 = DataFrame(x11 = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "X", "W", "Y", "Z"], x10 = rand(["P", "N"], 25), x12 = rand(25))
 @time leftjoin(dat2, dat4, on = [:x10, :x11]) # 1.540814 seconds
