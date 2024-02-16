@@ -51,3 +51,9 @@ t0 <- Sys.time()
 merge(dat2, dat4, by = c("X10", "X11"), all.x = T)
 t1 <- Sys.time()
 t1 - t0 # 31.76169 secs
+
+### 7. Applying a function with multiple inputs to a dataset of 10 million values
+t0 <- Sys.time()
+mapply(function(x, y, z) x^2 + 2*y + exp(z), dat2$X1, dat2$X2, dat2$X3)
+t1 <- Sys.time()
+t1 - t0 # 21.75846 secs
