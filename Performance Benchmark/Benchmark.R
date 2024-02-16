@@ -10,13 +10,13 @@ x5 <- rnorm(10^5)
 dat <- data.frame(Y = y, X1 = x1, X2 = x2, X3 = x3, X4 = x4, X5 = x5)
 
 
-### Logit Regression Permutation Hypothesis Test
+### 1. Logit Regression Permutation Hypothesis Test
 t0 <- Sys.time()
 replicate(10^3, coef(glm(Y ~ X1 + X2 + X3 + X4 + X5, data.frame(Y = y, X1 = sample(dat$X1, 10^5, replace = F), X2 = x2, X3 = x3, X4 = x4, X5 = x5), family = binomial(link = "logit")))[2])
 t1 <- Sys.time()
 t1 - t0 # 2.399658 mins
 
-### 1. Generating New Variable of 100 Thousand Observations w/ for-loop
+### 2. Generating New Variable of 100 Thousand Observations w/ for-loop
 t0 <- Sys.time()
 dat_store <- rnorm(nrow(dat))
 for (i in 1:nrow(dat)){
@@ -25,7 +25,7 @@ for (i in 1:nrow(dat)){
 t1 <- Sys.time()
 t1 - t0 # 0.3533151 secs
 
-### 2. Generating a Dataset of 10 Million Observations
+### 3. Generating a Dataset of 10 Million Observations
 t0 <- Sys.time()
 dat2 <- data.frame(matrix(rnorm(9*10^7), nrow = 10^7, ncol = 9))
 t1 <- Sys.time()
