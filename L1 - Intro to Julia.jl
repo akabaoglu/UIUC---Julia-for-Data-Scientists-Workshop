@@ -1,7 +1,9 @@
-#############################
-##### Abdullah Kabaoglu #####
-#####    01.08.2024     #####
-#############################
+############################################
+#####        Abdullah Kabaoglu         #####
+##### U. of Illinois Urbana-Champaign  #####
+##### Date Created:     01.08.2024     #####
+##### Last Revision:    02.18.2024     #####
+############################################
 
 ### 1. PACKAGE MANAGEMENT
 # Package Installation
