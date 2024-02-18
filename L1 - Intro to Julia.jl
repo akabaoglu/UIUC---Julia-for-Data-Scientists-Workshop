@@ -46,7 +46,7 @@ k2 = [1 2 3; "k" "l" "m"] # Mixed-type matrix (2.11)
 l1 = 1:100 # Range from 1 to 100 (2.12)
 l2 = 1:.25:5 # Range from 1 to 5 with a step of 0.25 (2.13)
 
-# `collect() function can be used to convert a range into a vector.
+# `collect()` function can be used to convert a range into a vector.
 collect(l1) # (2.14)
 
 
