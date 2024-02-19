@@ -57,3 +57,18 @@ t0 <- Sys.time()
 mapply(function(x, y, z) x^2 + 2*y + exp(z), dat2$X1, dat2$X2, dat2$X3)
 t1 <- Sys.time()
 t1 - t0 # 21.75846 secs
+
+### 8. Monte Carlo Sensitivity Analysis
+library(MASS)
+t0 <- Sys.time()
+fx <- function(q, r){
+  dat <- mvrnorm(10^3, mu = c(0, 0, 0), Sigma = matrix(c(1, q, r,
+                                                         0, 1, .1,
+                                                         0, 0 , 1), 3, 3))
+  est <- summary(lm(Y ~ X + C, data.frame(C = dat[,1], X = dat[,2], Y = dat[,3])))$coefficients[2, 1]
+  return(est)
+}
+sensanl <- expand.grid(q = sqrt(rep(seq(0, .5, .025), 5)), r = sqrt(rep(seq(0, .5, .025), 5)))
+p_vals <- mapply(fx, sensanl$q, sensanl$r)
+t1 <- Sys.time()
+t1 - t0 # 9.713405 secs

@@ -37,3 +37,16 @@ dat4 = DataFrame(x11 = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "
 
 ### 7. Applying a function with multiple inputs to a dataset of 10 million values
 @time map((x, y, z) -> x^2 + 2*y + exp(z), dat2.x1, dat2.x2, dat2.x3) # 0.303075 seconds
+
+### 8. Monte Carlo Sensitivity Analysis
+using Distributions, DataFrames, GLM
+@time begin
+function sens(q, r)
+    vals = rand(MvNormal([0, 0, 0], [1 q r; q 1 .2; r .2 1]), 10^3)'
+    df = DataFrame(X1 = vals[:, 1], X2 = vals[:, 2], Y = vals[:, 3])
+    m = lm(@formula(Y ~ X1 + X2), df)
+    return coeftable(m).cols[4][3]
+end
+ran = sqrt.(0:.025:.5)
+p_means = [mean([sens(a, b) for _ in 1:25]) for a in ran, b in ran]
+end # 1.348262 seconds
