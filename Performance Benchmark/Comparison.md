@@ -8,5 +8,5 @@
 | Merging a Dataset of 10 Million Observations on 2 Keys                     	| 31.76  	| 1.54  	| 20.61 	|
 | Applying a function with multiple inputs to a dataset of 10 million values 	| 21.76  	| 0.30  	| 71.79 	|
 | Monte Carlo Sensitivity Analysis                                           	| 9.71   	| 1.35  	| 7.20  	|
-|                                                           *Durations are given in seconds.
+*Durations are given in seconds.
 
