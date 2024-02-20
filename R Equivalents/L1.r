@@ -228,10 +228,10 @@ prod(b)
 length(b)
 
 # 5.12
-first(b)
+# N/A
 
 # 5.13
-last(b)
+# N/A
 
 # 5.14
 # N/A

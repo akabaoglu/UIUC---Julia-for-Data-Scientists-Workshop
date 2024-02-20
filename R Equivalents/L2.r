@@ -89,7 +89,7 @@ ran1 <- 1:10
 sample(ran1, 25, replace = T)
 
 # 2.3
-sample(ran1, 25, replace = F)
+sample(ran1, 5, replace = F)
 
 # 2.4
 # N/A

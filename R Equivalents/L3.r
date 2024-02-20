@@ -162,10 +162,10 @@ summarize(df_grouped, across(c(Y, X2), mean, .names = "{.col}_new"))
 # N/A
 
 # 6.10
-summarise(df_grouped, head(Y, 3))
+summarize(df_grouped, head(Y, 3))
 
 # 6.11
-summarise(df_grouped, tail(Y, 5))
+summarize(df_grouped, tail(Y, 5))
 
 
 # 7.1
@@ -178,7 +178,7 @@ df2 <- filter(df2, state == "IL")
 df2_stacked <- pivot_longer(df2, c(area, poptotal, popdensity))
 
 # 7.4
-filter(df2_stacked, county == "ADAMS") 
+filter(df2_stacked, county == "ADAMS")
 
 # 7.5
 pivot_wider(df2_stacked, names_from = name,  values_from = value)
@@ -209,7 +209,7 @@ df5 <- data.frame(KEY1 = c("A", "B", "C", "D", "E"), V1 = rnorm(5))
 df6 <- data.frame(KEY2 = sample(c("A", "B", "C", "D", "E", "F"), 100, replace = T), V2 = rnorm(100))
 
 # 8.9
-df7 = right_join(df5, df6, by = c("KEY1" = "KEY2"))
+df7 <- right_join(df5, df6, by = c("KEY1" = "KEY2"))
 
 
 # 9.1
