@@ -1,9 +1,6 @@
-using Random
-Random.seed!(123)
+include("Practice Questions/L1 - Practice.jl")
 
 # 1.1
-v1 = rand(100)
-
 function vec_diff(x)
     return maximum(x) - minimum(x)
 end
@@ -11,8 +8,6 @@ end
 vec_diff(v1)
 
 # 1.2
-v_series = [rand(20) for _ in 1:100]
-
 sum(v_series[79])
 
 # 1.3
@@ -29,8 +24,6 @@ map(x -> maximum(x) - minimum(x), v_series)
 10^11 > 11^10
 
 # 2.2
-rand_mat = round.(rand(100, 3), digits = 2)
-
 (rand_mat[:, 1]) > (rand_mat[:, 2])
 
 # 2.3
@@ -44,8 +37,6 @@ sum(map(x -> x == .52, rand_mat[:, 1]))
 
 
 # 3.1
-l1 = -100:1:100
-
 l1 = filter(iseven, l1)
 
 # 3.2

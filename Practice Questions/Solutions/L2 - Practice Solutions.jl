@@ -1,9 +1,6 @@
-using Random, Statistics, StatsBase, Distributions, GLM, RDatasets, DataFrames, Plots, StatsPlots
-Random.seed!(123)
+include("Practice Questions/L2 - Practice.jl")
 
 ## 1.1
-v1 = rand(100)
-
 mean(v1)
 median(v1)
 std(v1)
@@ -12,15 +9,11 @@ std(v1)
 quantile(v1, [.15, .85])
 
 ## 1.3
-v_miss = map(x -> x < .45 && x > .35 ? missing : x, v1)
-
 mean(skipmissing(v_miss))
 median(skipmissing(v_miss))
 std(skipmissing(v_miss))
 
 ## 1.4
-v2 = rand(1:10, 500)
-
 counts(v2)
 # Alternatively, using the `filter()` function:
 length(filter(x -> x == 2, v2))
@@ -53,7 +46,6 @@ zscore(samp_pois)
 
 
 ## 3.0
-pol_admission = RDatasets.dataset("pscl", "admit")
 describe(pol_admission)
 
 ## 3.1
