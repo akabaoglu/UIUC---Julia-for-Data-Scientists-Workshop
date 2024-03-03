@@ -93,8 +93,3 @@ median.(my_mat_vectorized)
 
 ## A.5
 dist_mean .- dist_median
-
-
-
-
-

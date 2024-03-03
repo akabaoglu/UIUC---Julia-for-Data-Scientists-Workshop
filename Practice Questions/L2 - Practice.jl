@@ -104,3 +104,4 @@ pol_admission = RDatasets.dataset("pscl", "admit")
 
 ## A.5
 # Finally, calculate the difference between the mean and median values using `dist_mean` and `dist_median`. (Hint: Broadcasting from the previous workshop might be helpful.)
+
