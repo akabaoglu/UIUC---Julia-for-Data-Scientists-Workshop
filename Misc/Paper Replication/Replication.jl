@@ -1,4 +1,4 @@
-using DataFrames, Plots, CSV, ExcelReaders, RData, StatsPlots, Statistics, StatsBase, GLM, RegressionTables, Distributions, StatsFuns, LaTeXStrings, HTTP, ZipFile
+using DataFrames, Plots, CSV, ExcelReaders, RData, StatsPlots, Statistics, StatsBase, GLM, RegressionTables, Distributions, StatsFuns, LaTeXStrings
 
 nmc = CSV.read("Misc/Paper Replication/Data/NMC-60-abridged.csv", DataFrame)
 select!(nmc, [2, 3, 10])
