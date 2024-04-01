@@ -141,6 +141,7 @@ plot(p1, p2, p3, p4, layout = (1, 4)) # Arranging the density plots in a 1x4 gri
 
 plot(p1, p2, p3, p4, layout = (4, 1)) # Arranging the density plots in a 4x1 grid (vertical layout)
 
+
 ### 8. ADDING LaTeX STYLES ON PLOTS (requires LaTeXStrings.jl)
 plot(x -> (1 + x)/(x^2 + 4), xlim = (-10, 10), xlabel = L"x", ylabel = L"\frac{1 + x}{x^2 + 4}") # Plotting a rational function with specified x-axis limits and LaTeX labels
 
