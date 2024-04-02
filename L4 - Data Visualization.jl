@@ -2,7 +2,7 @@
 #####        Abdullah Kabaoglu         #####
 ##### U. of Illinois Urbana-Champaign  #####
 ##### Date Created:     03.30.2024     #####
-##### Last Revision:    04.01.2024     #####
+##### Last Revision:    04.02.2024     #####
 ############################################
 
 ### 0. IMPORTING PACKAGES, ETC.
@@ -39,13 +39,17 @@ scatter(eachindex(v1), v1, c = :red, ms = 4, msw = 2, label = "Lines", xlab = "X
 
 scatter(eachindex(v1), v1, c = :red, ms = 4, msw = 2, label = "Lines", xlab = "X Label", ylab = "Y Label", xlim = (-5, 30), ylim = (-1, 2), title = "SOME PLOT", xticks = 1:25, yticks = 0:.1:1) # Setting y-axis limits from -1 to 2
 
-plot(eachindex(v1), v1, c = :red, ms = 4, msw = 2, label = "Lines", xlab = "X Label", ylab = "Y Label", xlim = (-5, 30), ylim = (-1, 2), title = "SOME PLOT", xticks = 1:25, yticks = 0:.1:1) # Switching back to a line plot with the same customizations as the final scatter plot for comparison
+scatter(eachindex(v1), v1, c = :red, ms = 4, msw = 2, label = "Lines", xlab = "X Label", ylab = "Y Label", xlim = (-5, 30), ylim = (-1, 2), title = "SOME PLOT", xticks = 1:25, yticks = 0:.1:1, markershape = :star) # Changing marker symbol to star. Other options are : `:none`, `:auto`, `:circle`, `:rect`, `:star5`, `:diamond`, `:hexagon`, `:cross`, `:xcross`, `:utriangle`, `:dtriangle`, `:rtriangle`, `:ltriangle`, `:pentagon`, `:heptagon`, `:octagon`, `:star4`, `:star6`, `:star7`, `:star8`, `:vline`, `:hline`, `:+`, `:x`
+
+scatter(eachindex(v1), v1, c = :red, ms = 4, msw = 2, label = "Lines", xlab = "X Label", ylab = "Y Label", xlim = (-5, 30), ylim = (-1, 2), title = "SOME PLOT", xticks = 1:25, yticks = 0:.1:1, markershape = :star, framestyle = :box) # Changing the frame style from `:axes` (the default style) into `box`. Other options are: `:semi`, `:origin`, `:zerolines`, `:grid`, `:none`
+
+plot(eachindex(v1), v1, c = :red, ms = 4, msw = 2, label = "Lines", xlab = "X Label", ylab = "Y Label", title = "SOME PLOT", xticks = 1:25, yticks = 0:.1:1) # Switching back to a line plot with the same customizations as the final scatter plot for comparison
+
+plot(eachindex(v1), v1, c = :red, ms = 4, msw = 2, label = "Lines", xlab = "X Label", ylab = "Y Label", title = "SOME PLOT", xticks = 1:25, yticks = 0:.1:1, linestyle = :dash) # Changing line style to dash. Other options are: `:auto`, `:solid`, `:dot`, `:dashdot`, `:dashdotdot`.
 
 plot(eachindex(v1), v1, c = :red, ms = 4, msw = 2, xlab = "X Label", ylab = "Y Label", xlim = (-5, 30), ylim = (-1, 2), title = "SOME PLOT", xticks = 1:25, yticks = 0:.1:1, label = :none) # Removing a particular label from the legend
 
 plot(eachindex(v1), v1, c = :red, ms = 4, msw = 2, label = "Lines", xlab = "X Label", ylab = "Y Label", xlim = (-5, 30), ylim = (-1, 2), title = "SOME PLOT", xticks = 1:25, yticks = 0:.1:1, legend = :none) # Removing not only a particular label, but the entire legend
-
-plot(eachindex(v1), v1, c = :red, ms = 4, msw = 2, label = "Lines", xlab = "X Label", ylab = "Y Label", xlim = (-5, 30), ylim = (-1, 2), title = "SOME PLOT", xticks = 1:25, yticks = 0:.1:1, legend = :none, framestyle = :box) # Changing the frame style from `:axes` (the default style) into `box`. Other options are: `:semi`, `:origin`, `:zerolines`, `:grid`, `:none`,
 
 
 ### 3. PLOT OVERLAY (requires Plots.jl)
